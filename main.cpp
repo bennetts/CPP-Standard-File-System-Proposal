@@ -2,7 +2,8 @@
 #include <vector>
 
 // A new file standard for the C++ language.
-//replaces EMBED precomiler with a function in the language that accepts STATIC as a type of file to embed at compile time.
+//replaces EMBED precomiler with a function in the language that accepts STATIC as a type of file 
+//to embed into the executable at compile time.
 
 struct file {
 	unsigned int INTERNAL_ID;
