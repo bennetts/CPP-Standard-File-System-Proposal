@@ -14,7 +14,7 @@ private:
 	std::vector <CPP_INTERNAL_FILE> filedata;
 
 public:
-	file fileload(std::string path, bool load_into_memory_on_program_startup); // A method to load a file based on the parameters.
+	file fileload(std::string path, bool static_or_dynamic); // A method to load a file based on the parameters.
 
 	//General file handling methods.
 		int seek(file from, unsigned int position); // A method to seek to a specific position in the file stream.
