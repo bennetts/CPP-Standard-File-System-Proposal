@@ -3,7 +3,7 @@
 
 // A new file standard for the C++ language.
 
-class file {
+struct file {
 	unsigned int INTERNAL_ID;
 }; //Metadata object for the user to reference their files for heuristics or as an object in the array.
 
