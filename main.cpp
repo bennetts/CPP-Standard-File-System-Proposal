@@ -25,7 +25,7 @@ public:
 	//Dynamic file handling methods.
 		int close(file file_to_close); // A method to close the file stream if not embedded.
 		int embed(file into_memory, unsigned int starting_offset = 0, unsigned int bytes_to_load = 0); // "0 bytes to load" means load the entire rest of the file.
-		int load_percentage_complete(file file_to_check);
+		int heuristics_time_to_wait_to_check_if_file_is_loaded_yet(file file_to_check);
 
 	//Copy handling
 		// A method to copy the file data. Does not require initial loading. Will automatically open the stream and close it after copying if necessary.
