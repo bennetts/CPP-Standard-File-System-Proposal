@@ -3,32 +3,16 @@
 
 // A new file standard for the C++ language.
 
-struct CPP_INTERNAL_FILE {
-	std::vector <char> data; // A vector to hold the file data if embedded.
-};
-
 class file {
-public:
-	//Getters for the file properties.
-	std::string file_path() const { return path; }
-	unsigned int file_size() const { return size; }
-	bool whether_file_is_set_to_load_into_memory() const { return embedded || embed; }
-	unsigned int internal_id() const { return INTERNAL_ID; }
-
-private:
-	std::string path;
-	unsigned int size;
-	bool embedded;
-	bool embed;
 	unsigned int INTERNAL_ID;
-};
+}; //Metadata object for the user to reference their files for heuristics or as an object in the array.
 
-class filehandler {
+class filehandler_internal {
 private:
 	std::vector <CPP_INTERNAL_FILE> filedata;
 
 public:
-	file fileload(std::string path, bool relative, bool embed, bool load_into_memory_on_program_startup); // A method to load a file based on the parameters.
+	file fileload(std::string path, bool load_into_memory_on_program_startup); // A method to load a file based on the parameters.
 
 	//General file handling methods.
 		int seek(file from, unsigned int position); // A method to seek to a specific position in the file stream.
@@ -46,6 +30,6 @@ public:
 		std::vector<char> copy(file from, unsigned int starting_offset = 0, unsigned int bytes_to_copy = 0);
 		// A method to expose the internal vector of bytes that holds the file data if it was loaded statically. This allows for direct manipulation of the file data in memory without copying it.
 		std::vector<char>* expose(file from_memory); 
-};
+} filehandler; //let's make sure it's a singleton guarantee
 
 //This requires compiler and linker changes for static loading of files.
