@@ -5,6 +5,10 @@
 //replaces EMBED precomiler with a function in the language that accepts STATIC as a type of file 
 //to embed into the executable at compile time.
 
+//This requires compiler and linker changes for static loading of files.
+
+//Provide callbacks to the filesystem class to ensure that only one instance of the filesystem class receives function calls.
+
 struct file {
 	unsigned int INTERNAL_ID;
 }; //Metadata object for the user to reference their files for heuristics or as an object in the array.
@@ -33,5 +37,3 @@ public:
 		// A method to expose the internal vector of bytes that holds the file data if it was loaded statically. This allows for direct manipulation of the file data in memory without copying it.
 		std::vector<char>* expose(file from_memory); 
 } filehandler; //let's make sure it's a singleton guarantee
-
-//This requires compiler and linker changes for static loading of files.
