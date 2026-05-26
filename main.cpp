@@ -9,6 +9,13 @@
 
 //Provide callbacks to the filesystem class to ensure that only one instance of the filesystem class receives function calls.
 
+/*****
+*	Notes regarding the file system proposal:
+*		fileload(string filename, bool static);
+*	
+*	This is the proposed metadata retriever for loading files in future C++.
+*/
+
 struct file {
 	unsigned int INTERNAL_ID;
 }; //Metadata object for the user to reference their files for heuristics or as an object in the array.
